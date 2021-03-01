@@ -4,6 +4,7 @@ example:
 Given a networkx graph G and any networkx layout function, e.g. `spring_layout`
 
 ```python
+from nx2alt import base_layers, altair_network_data
 node_base, edge_base = base_layers(*altair_network_data(G, spring_layout))
 
 edges = edge_base.mark_line(color='gray')
