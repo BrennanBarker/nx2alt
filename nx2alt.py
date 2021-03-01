@@ -1,11 +1,9 @@
-"""Translating networkx graphs into the format expected by altair.
-
-TODO: multigraphs changed to weight?
+"""Translating `networkx` graphs into the data structure preferred by `altair.`
 
 example:
-
 Given a networkx graph G and any networkx layout function, e.g. `spring_layout`
 
+```python
 node_base, edge_base = base_layers(*altair_network_data(G, spring_layout))
 
 edges = edge_base.mark_line(color='gray')
@@ -13,6 +11,8 @@ nodes = node_base.mark_circle(size=300)
 labels = node_base.mark_text().encode(text='node_id')
 
 edges + nodes + labels
+```
+
 """
 
 import networkx as nx
